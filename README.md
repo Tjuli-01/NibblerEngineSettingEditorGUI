@@ -1,5 +1,6 @@
 # NibblerEngineSettingsEditor
-A simple tool to change the settings of Lc0 in Nibbler
+A simple tool to change the settings of Lc0 in Nibbler.
+
 Nibbler Download: https://github.com/rooklift/nibbler
 
 
