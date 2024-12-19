@@ -1,0 +1,43 @@
+/* styles.css */
+.root {
+    -fx-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -fx-background-color: #f8f9fa;
+}
+
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #495057;
+}
+
+.text-field {
+    -fx-padding: 10;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-background-color: #ffffff;
+    -fx-font-size: 14px;
+}
+
+.check-box {
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+    -fx-text-fill: #495057;
+}
+
+.button {
+    -fx-padding: 10;
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-font-size: 14px;
+}
+
+.button:hover {
+    -fx-background-color: #0056b3;
+}
+
+.error-label {
+    -fx-text-fill: red;
+    -fx-font-size: 12px;
+}
