@@ -27,7 +27,7 @@ public class SettingsSaver {
             options.put("WDLCalibrationElo", whiteElo);
             options.put("Contempt", eloDifference);
             options.put("ContemptMode", contemptMode);
-            options.put("WLDEvalObjectivity", 1);
+            options.put("WDLEvalObjectivity", 1);
 
         }
 
