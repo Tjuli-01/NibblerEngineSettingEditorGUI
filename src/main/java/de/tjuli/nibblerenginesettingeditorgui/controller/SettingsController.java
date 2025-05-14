@@ -1,10 +1,12 @@
 package de.tjuli.nibblerenginesettingeditorgui.controller;
 
 import de.tjuli.nibblerenginesettingeditorgui.util.SettingsSaver;
+import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
+import javafx.util.Duration;
 
 import java.io.IOException;
 
@@ -22,6 +24,8 @@ public class SettingsController {
     @FXML
     private Label errorLabel;
 
+    private final SettingsSaver settingsSaver = new SettingsSaver();
+
     @FXML
     protected void onSaveButtonClick() throws IOException {
         if (validateInputs()) {
@@ -29,8 +33,20 @@ public class SettingsController {
             int opponentElo = Integer.parseInt(opponentEloField.getText());
             boolean isWhite = whiteCheckBox.isSelected();
 
-            SettingsSaver.saveSettings(yourElo, opponentElo, isWhite);
+            String error = settingsSaver.saveSettings(yourElo, opponentElo, isWhite);
+            if (error != null) {
+                displayText(error, "red");
+            } else {
+                displayText("Settings saved successfully!", "green");
+            }
         }
+    }
+    private void displayText(String text, String color) {
+        errorLabel.setStyle("-fx-text-fill: " + color + ";");
+        errorLabel.setText(text);
+        PauseTransition pause = new PauseTransition(Duration.seconds(5));
+        pause.setOnFinished(_ -> errorLabel.setText(""));
+        pause.play();
     }
 
     private boolean validateInputs() {
@@ -49,7 +65,7 @@ public class SettingsController {
         }
 
         if (!errors.isEmpty()) {
-            errorLabel.setText(errors.toString().trim());
+            displayText(errors.toString().trim(), "red");
             return false;
         }
 

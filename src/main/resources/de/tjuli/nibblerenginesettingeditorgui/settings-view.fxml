@@ -20,7 +20,7 @@
     <Label text="Opponent's ELO:"/>
     <TextField fx:id="opponentEloField" styleClass="text-field"/>
 
-    <CheckBox fx:id="whiteCheckBox" text="Are you playing white?" styleClass="check-box" selected="true"/>
+    <CheckBox fx:id="whiteCheckBox" text="Are you playing as white?" styleClass="check-box" selected="true"/>
 
     <Button text="Save Settings" onAction="#onSaveButtonClick" styleClass="button"/>
 
